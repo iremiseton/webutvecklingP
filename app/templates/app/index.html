@@ -6,20 +6,60 @@
     <style>
 
     </style>
+
+    <script>
+
+        function clock() {// We create a new Date object and assign it to a variable called "time".
+            var time = new Date(),
+                
+                // Access the "getHours" method on the Date object with the dot accessor.
+                hours = time.getHours(),
+                
+                // Access the "getMinutes" method with the dot accessor.
+                minutes = time.getMinutes(),
+                
+                
+                seconds = time.getSeconds();
+
+                document.querySelectorAll('#time')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
+        
+            function harold(standIn) {
+                if (standIn < 10) {
+                standIn = '0' + standIn
+                }
+                return standIn;
+            }
+        }
+        setInterval(clock, 1000);
+
+    </script>
+
 {% endblock %}
 
 {% block content %}
 
+
     <div class="jumbotron align-center">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <h1 class="display-4 text-center time" id="time"></h1>
     </div>
 
     <div class="container-fluid">
+        <div class="row justify-content-md-center">
+        
+            <div class="card bg-light col-lg-3 shadow">
+                <h5 class="card-title">Featured</h5>
+                <img src="http://www.novasoftware.se/ImgGen/schedulegenerator.aspx?format=png&schoolid=80080/sv-se&id=0005200076&period=&week=14&mode=0&day=8&width=300&height=600">
+            </div>
+            <div class="card bg-light col-lg-6 shadow">
+                <h5 class="card-title">Card title</h5>
+            </div>
+            <div class="card bg-light col-lg-3 shadow">
+                <h5 class="card-title">Card title</h5>
+            </div>
+        </div>
+
         <div class="row">
+
         </div>
     </div>
 
